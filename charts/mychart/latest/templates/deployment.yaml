@@ -30,11 +30,11 @@ spec:
           livenessProbe:
             httpGet:
               path: /healthz
-              port: http
+              port: 5000
           readinessProbe:
             httpGet:
               path: /sayHello
-              port: http
+              port: 5000
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
