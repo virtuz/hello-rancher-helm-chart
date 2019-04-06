@@ -24,17 +24,17 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
-            - name: http
+            - name: flaskApp
               containerPort: 5000
               protocol: TCP
           livenessProbe:
             httpGet:
               path: /healthz
-              port: 5000
+              port: flaskApp
           readinessProbe:
             httpGet:
               path: /sayHello
-              port: 5000
+              port: flaskApp
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
