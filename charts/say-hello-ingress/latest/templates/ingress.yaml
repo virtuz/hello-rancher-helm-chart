@@ -33,7 +33,7 @@ spec:
           - path: {{ . }}
             backend:
               serviceName: {{ $fullName }}
-              servicePort: 5000
+              servicePort: {{ .Values.service.port }}
         {{- end }}
   {{- end }}
 {{- end }}
