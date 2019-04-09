@@ -1,0 +1,9 @@
+say-hello-ingress:
+  service:
+    type: NodePort
+  ingress:
+    enabled: true
+say-hello-loadbalancer:
+  userName: parent chart
+  service:
+    type: LoadBalancer

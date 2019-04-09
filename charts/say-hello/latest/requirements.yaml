@@ -1,0 +1,7 @@
+dependencies:
+  - name: say-hello-base
+    version: 0.1.1
+    alias: say-hello-ingress
+  - name: say-hello-base
+    version: 0.1.1
+    alias: say-hello-loadbalancer
